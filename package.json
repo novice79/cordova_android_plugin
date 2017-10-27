@@ -1,0 +1,17 @@
+{
+    "name": "FreeGo",
+    "version": "0.0.1",
+    "description": "A plugin for determining if the user has an appointment coming up shortly",
+    "cordova": {
+      "id": "cordova-plugin-free-go",
+      "platforms": [
+        "android"
+      ]
+    },
+    "keywords": [
+      "ecosystem:cordova",
+      "cordova-android"
+    ],
+    "author": "David",
+    "license": "ISC"
+  }

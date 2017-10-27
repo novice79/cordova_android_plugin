@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin id="david.pos" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+	<name>
+		FreeGo
+	</name>
+	<js-module name="Pos" src="www/FreeGo.js">
+		<clobbers target="Pos" />
+	</js-module>
+	<platform name="android">
+		<config-file parent="/*" target="res/xml/config.xml">
+			<feature name="Pos">
+				<param name="android-package" value="freego.david.Pos" />
+			</feature>
+		</config-file>
+		<config-file parent="/manifest/application" target="AndroidManifest.xml">
+			<activity android:name="freego.david.Scanner">
+			</activity>         
+		</config-file>
+		<config-file parent="/*" target="AndroidManifest.xml">
+			<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+			<uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+			<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+			<uses-permission android:name="android.permission.WRITE_SETTINGS" />
+			<uses-permission android:name="android.permission.WRITE_SECURES" />
+			<uses-permission android:name="android.permission.VIBRATE" />
+			<uses-permission android:name="android.permission.WAKE_LOCK" />
+			<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+			<uses-permission android:name="android.permission.CAMERA" />
+			<uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+			<uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+			<uses-permission android:name="android.permission.ACCESS_COARSE_LOCAION" />
+			<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+			<uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+			<uses-permission android:name="com.android.launcher.permission.WRITE_SETTINGS" />
+			<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+			<uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+			<uses-permission android:name="android.permission.BLUETOOTH" />
+			<uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+			<uses-permission android:name="android.permission.NFC" />
+			<uses-permission android:name="android.permission.CALL_PHONE" />
+			<uses-permission android:name="android.permission.RECORD_AUDIO" />
+			<uses-permission android:name="android.permission.INTERNET" />
+			<uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+			<uses-permission android:name="android.permission.FLASHLIGHT" />
+			<uses-permission android:name="android.permission.READ_CALENDAR" />
+			<uses-feature android:name="android.hardware.camera" />
+			<uses-feature android:name="android.hardware.camera.autofocus" />
+			<uses-permission android:name="android.permission.CLOUDPOS_SAFE_MODULE" />
+			<uses-permission android:name="android.permission.CLOUDPOS_MSR" />
+			<uses-permission android:name="android.permission.CLOUDPOS_SMARTCARD" />
+			<uses-permission android:name="android.permission.CLOUDPOS_CONTACTLESS_CARD" />
+			<uses-permission android:name="android.permission.CLOUDPOS_PRINTER" />
+			<uses-permission android:name="android.permission.CLOUDPOS_PINPAD" />
+			<uses-permission android:name="android.permission.CLOUDPOS_PIN_GET_PIN_BLOCK" />
+			<uses-permission android:name="android.permission.CLOUDPOS_PIN_MAC" />
+			<uses-permission android:name="android.permission.CLOUDPOS_PIN_ENCRYPT_DATA" />
+			<uses-permission android:name="android.permission.CLOUDPOS_PIN_UPDATE_MASTER_KEY" />
+			<uses-permission android:name="android.permission.CLOUDPOS_PIN_UPDATE_USER_KEY" />
+			<uses-permission android:name="android.permission.CLOUDPOS_LED" />
+			<uses-permission android:name="android.permission.CLOUDPOS_BARCODE" />
+			<uses-permission android:name="android.permission.CLOUDPOS_MODIFY_SYSTEM_TIME" />
+			<uses-permission android:name="android.permission.CLOUDPOS_IDCard" />
+			<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+			<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+			<uses-permission android:name="android.permission.READ_LOGS" />
+		</config-file>
+		<framework src="me.dm7.barcodescanner:zxing:1.9.8" />
+		<framework src="com.google.zxing:core:3.3.0" />
+		<lib-file src="libs/DecodeWlt.jar" />
+		<lib-file src="libs/fingerprint.jar" />
+		<lib-file src="libs/ItepsdkInterface.jar" />
+
+		<source-file src="libs/armeabi/libDecodeWlt.so" target-dir="libs/armeabi" />
+		<source-file src="libs/armeabi/libfont_util.so" target-dir="libs/armeabi" />
+		<source-file src="libs/armeabi/libiconv.so" target-dir="libs/armeabi" />
+		<source-file src="libs/armeabi/libitep_serial_port_pc.so" target-dir="libs/armeabi" />
+		<source-file src="libs/armeabi/libttyACM.so" target-dir="libs/armeabi" />
+
+        <source-file src="libs/armeabi-v7a/libDecodeWlt.so" target-dir="libs/armeabi-v7a" />
+		<source-file src="libs/armeabi-v7a/libfont_util.so" target-dir="libs/armeabi-v7a" />
+		<source-file src="libs/armeabi-v7a/libiconv.so" target-dir="libs/armeabi-v7a" />
+		<source-file src="libs/armeabi-v7a/libImageProc.so" target-dir="libs/armeabi-v7a" />
+		<source-file src="libs/armeabi-v7a/libitep_serial_port_pc.so" target-dir="libs/armeabi-v7a" />
+		<source-file src="libs/armeabi-v7a/libttyACM.so" target-dir="libs/armeabi-v7a" />
+
+		<source-file src="src/android/Pos.java" target-dir="src/freego/david" />
+		<source-file src="src/android/Scanner.java" target-dir="src/freego/david" />
+	</platform>
+</plugin>
